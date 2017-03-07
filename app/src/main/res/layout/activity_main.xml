@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ll_main_bottom"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding"
+                android:text="Emoji表情展示："
+                android:textColor="@color/colorAccent"/>
+
+            <io.github.rockerhieu.emojicon.EmojiconTextView
+                android:id="@+id/tv_main_emoji"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding"
+                android:text="Emoji表情转Unicode编码："
+                android:textColor="@color/colorAccent"/>
+
+            <TextView
+                android:id="@+id/tv_main_unicode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding"
+                android:text="Emoji表情转Unicode（10进制）编码："
+                android:textColor="@color/colorAccent"/>
+
+            <TextView
+                android:id="@+id/tv_main_unicode_dec"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Emoji表情转Unicode（16进制）编码："
+                android:textColor="@color/colorAccent"/>
+
+            <TextView
+                android:id="@+id/tv_main_unicode_hex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding"
+                android:text="Emoji表情转iOS可识别的Aliase："
+                android:textColor="@color/colorAccent"/>
+
+            <TextView
+                android:id="@+id/tv_main_aliase"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding"
+                android:text="过滤Emoji表情："
+                android:textColor="@color/colorAccent"/>
+
+            <TextView
+                android:id="@+id/tv_main_emoji_filter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/ll_main_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <io.github.rockerhieu.emojicon.EmojiconEditText
+                android:id="@+id/et_main_bottom"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="5dp"/>
+
+            <ImageView
+                android:id="@+id/iv_main_emoji"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:src="@mipmap/icon_happy_face"/>
+
+            <Button
+                android:id="@+id/btn_main_unicode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="编码转换"/>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_main_bottom_emoji"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:visibility="gone"/>
+    </LinearLayout>
+</RelativeLayout>
